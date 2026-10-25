@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>69070136 Pimchanok Profile & To-do</title>
+    <!-- นำเข้า Google Fonts: Coiny และ Kodchasan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Kodchasan:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Kodchasan', sans-serif;
+        }
+
+        .coiny-font {
+            font-family: 'Coiny', cursive, sans-serif;
+        }
+
+        body {
+            /* เปลี่ยนพื้นหลังเป็นสีเดียว (สีฟ้าพาสเทลสดใส) */
+            background-color: #a29bfe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* การ์ดหลักใบเดียวตรงกลาง */
+        .card {
+            background-color: #ffffff;
+            width: 900px;
+            padding: 35px;
+            border-radius: 24px;
+            border: 4px solid #ff79c9;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            display: flex;
+            gap: 30px;
+        }
+
+        /* ฝั่งซ้าย: โปรไฟล์ */
+        .profile {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: #2d3436;
+            border-right: 3px dashed #dfe6e9;
+            padding-right: 25px;
+        }
+
+        .profile img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ffb86c;
+            box-shadow: 0 8px 20px rgba(255, 184, 108, 0.4);
+            margin-bottom: 15px;
+        }
+
+        .profile h2 {
+            font-size: 24px;
+            color: #ff007f;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 0px #ffeaa7;
+        }
+
+        .profile p {
+            font-size: 14px;
+            color: #636e72;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .profile a {
+            display: inline-block;
+            background-color: #0984e3;
+            color: #ffffff;
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 12px;
+            box-shadow: 0 4px 10px rgba(9, 132, 227, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        .profile a:hover {
+            background-color: #74b9ff;
+            transform: translateY(-2px);
+        }
+
+        /* ฝั่งขวา: To-do List */
+        .todo {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .todo h2 {
+            font-size: 26px;
+            color: #6c5ce7;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 0px #fd79a8;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        #todo-input {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: 12px;
+            border: 2px solid #a29bfe;
+            background-color: #f8f9fa;
+            color: #2d3436;
+            outline: none;
+            font-size: 14px;
+        }
+
+        #todo-input::placeholder {
+            color: #b2bec3;
+        }
+
+        #add-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 12px;
+            background-color: #00b894;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 184, 148, 0.3);
+            transition: all 0.2s ease;
+        }
+
+        #add-btn:hover {
+            background-color: #55efc4;
+            transform: translateY(-2px);
+        }
+
+        #todo-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-height: 280px;
+            overflow-y: auto;
+        }
+
+        #todo-list li {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 12px 15px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: #2d3436;
+            font-weight: 500;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+        }
+
+        #todo-list li button {
+            background-color: #ff7675;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        #todo-list li button:hover {
+            background-color: #d63031;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- ฝั่งซ้าย: โปรไฟล์ (ครบถ้วนตามข้อกำหนด Part 3) -->
+        <div class="profile">
+            <img src="profile.jpg" alt="รูปโปรไฟล์ของฉัน">
+            <h2 class="coiny-font">Pimchanok Thongjunta</h2>
+            <p><strong>รหัสนักศึกษา:</strong> 69070136 | IT KMITL</p>
+            <p>ชอบงานศิลปะ การวาดรูป และการเล่นดนตรี พร้อมสร้างสรรค์สิ่งใหม่ๆ ด้วยเทคโนโลยี ✨</p>
+            <p><strong>SKILLS:</strong> วาดรูป, เล่นดนตรี</p>
+            <a href="https://www.it.kmitl.ac.th" target="_blank">เว็บไซต์คณะ IT KMITL</a>
+        </div>
+
+        <!-- ฝั่งขวา: To-do List (มี id ครบถ้วนตามโจทย์กำหนด) -->
+        <div class="todo">
+            <h2 class="coiny-font">To-do List 🌟</h2>
+            <div class="input-container">
+                <input type="text" id="todo-input" placeholder="พิมพ์สิ่งที่ต้องทำ...">
+                <button type="button" id="add-btn">เพิ่ม</button>
+            </div>
+            <ul id="todo-list">
+                <li><span>ฝึกวาดรูปดิจิทัลอาร์ต 🎨</span><button type="button">ลบ</button></li>
+                <li><span>ซ้อมเล่นดนตรีเพลงใหม่ 🎸</span><button type="button">ลบ</button></li>
+                <li><span>ทำการบ้านวิชา ITF 💻</span><button type="button">ลบ</button></li>
+                <li><span>ทบทวนเนื้อหาภาษาจีน HSK 4 📚</span><button type="button">ลบ</button></li>
+            </ul>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
